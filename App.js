@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, StatusBar, StyleSheet } from 'react-native';
+// import nommé depuis CardList.js
+import { CardList } from './components/CardList';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    // conteneur principal de l’écran
+    <View style={styles.screen}>
+      {/* barre de statut (heure, réseau, batterie…) contrôlée par React Native */}
+      <StatusBar />
+      {/* affichage de la liste de cartes */}
+      <CardList />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  screen: {
+    flex: 1,                   // occupe tout l’espace disponible verticalement
+    backgroundColor: '#f6f7fb' // couleur de fond de l’écran
+  }
 });
